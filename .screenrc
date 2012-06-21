@@ -1,0 +1,19 @@
+startup_message off
+defscrollback 10000
+defutf8 on
+shell -$SHELL # rvm is retarded
+screen -t dev           0 bash --rcfile ~/.screen.dev.bashrc
+screen -t admin_console 1 bash --rcfile ~/.screen.admin_console.bashrc
+screen -t admin_server  2 bash --rcfile ~/.screen.admin_server.bashrc
+screen -t admin_log     3 bash --rcfile ~/.screen.admin_log.bashrc
+screen -t store_console 4 bash --rcfile ~/.screen.store_console.bashrc
+screen -t store_server  5 bash --rcfile ~/.screen.store_server.bashrc
+screen -t store_log     6 bash --rcfile ~/.screen.store_log.bashrc
+screen -t mysql         7 bash --rcfile ~/.screen.mysql.bashrc
+screen -t redis_server  8 bash --rcfile ~/.screen.redis_server.bashrc
+screen -t resque_server 9 bash --rcfile ~/.screen.resque_server.bashrc
+screen -t irssi        10 bash --rcfile ~/.screen.irssi.bashrc
+screen -t resque-cli   11 bash --rcfile ~/.screen.prod-resque-cli.bashrc
+select 0
+# `C-a b` will copy whatever is in the paste buffer into OS X's paste buffer.
+bind b eval 'writebuf /tmp/screen-pbcopy' '!/bin/bash -c "cat /tmp/screen-pbcopy |pbcopy"'

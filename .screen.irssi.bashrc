@@ -1,0 +1,2 @@
+. ~/.bashrc
+irssi #irssi-digimedia
