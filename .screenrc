@@ -2,6 +2,7 @@ startup_message off
 defscrollback 10000
 defutf8 on
 shell -$SHELL # rvm is retarded
+term xterm-256color
 screen -t dev           0 bash --rcfile ~/.screen.dev.bashrc
 screen -t admin_console 1 bash --rcfile ~/.screen.admin_console.bashrc
 screen -t admin_server  2 bash --rcfile ~/.screen.admin_server.bashrc
